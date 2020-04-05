@@ -133,7 +133,7 @@
                   
                   <span class="post-meta">
                     <i class="far fa-chart-bar"></i>
-                    195 字
+                    253 字
                   </span>
                 
 
@@ -169,12 +169,12 @@
           <div class="post-content mx-auto" id="post">
             
             <div class="markdown-body">
-              <h1 id="【-CSS-】元素水平垂直居中"><a href="#【-CSS-】元素水平垂直居中" class="headerlink" title="【 CSS 】元素水平垂直居中"></a>【 CSS 】元素水平垂直居中</h1><h2 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h2><h3 id="对于行内元素："><a href="#对于行内元素：" class="headerlink" title="对于行内元素："></a>对于行内元素：</h3><pre><code class="css">.content {
+              <h1 id="【-CSS-】元素水平垂直居中"><a href="#【-CSS-】元素水平垂直居中" class="headerlink" title="【 CSS 】元素水平垂直居中"></a>【 CSS 】元素水平垂直居中</h1><h2 id="一、水平居中"><a href="#一、水平居中" class="headerlink" title="一、水平居中"></a>一、水平居中</h2><h3 id="1、对于行内元素"><a href="#1、对于行内元素" class="headerlink" title="1、对于行内元素"></a>1、对于行内元素</h3><pre><code class="css">.content {
     width: 100%;
     text-align: center;
 }</code></pre>
 <pre><code class="html">&lt;div class=&quot;content&quot;&gt;hello&lt;/div&gt;</code></pre>
-<h3 id="对于确定宽度的块级元素"><a href="#对于确定宽度的块级元素" class="headerlink" title="对于确定宽度的块级元素:"></a>对于确定宽度的块级元素:</h3><blockquote>
+<h3 id="2、对于确定宽度的块级元素"><a href="#2、对于确定宽度的块级元素" class="headerlink" title="2、对于确定宽度的块级元素"></a>2、对于确定宽度的块级元素</h3><blockquote>
 <p>width, margin 实现</p>
 </blockquote>
 <pre><code class="css">.parent {
@@ -194,7 +194,7 @@
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 <p><img src="/img/image-20200405214218652.png" srcset="/img/loading.gif" alt="image-20200405214218652"></p>
-<h3 id="对于宽度未知的块级元素"><a href="#对于宽度未知的块级元素" class="headerlink" title="对于宽度未知的块级元素:"></a>对于宽度未知的块级元素:</h3><blockquote>
+<h3 id="3、对于宽度未知的块级元素"><a href="#3、对于宽度未知的块级元素" class="headerlink" title="3、对于宽度未知的块级元素"></a>3、对于宽度未知的块级元素</h3><blockquote>
 <p><strong>方法1：设置table</strong></p>
 </blockquote>
 <pre><code class="css">.parent {
@@ -227,12 +227,31 @@
     display:inline-block;
     border: 1px sienna solid;
 }</code></pre>
-<pre><code class="html">  &lt;div class=&quot;parent&quot;&gt;
-      &lt;div class=&quot;children&quot;&gt;
-             Hello World
-      &lt;/div&gt;
-  &lt;/div&gt;</code></pre>
+<pre><code class="html">&lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=&quot;children&quot;&gt;
+        Hello World
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
 <p><img src="/img/image-20200405214840461.png" srcset="/img/loading.gif" alt="image-20200405214840461"></p>
+<h2 id="二、垂直居中"><a href="#二、垂直居中" class="headerlink" title="二、垂直居中"></a>二、垂直居中</h2><h3 id="1、position、top、transform-实现"><a href="#1、position、top、transform-实现" class="headerlink" title="1、position、top、transform 实现"></a>1、position、top、transform 实现</h3><pre><code class="css">.parent {
+    width: 400px;
+    height: 400px;
+    background-color: silver;
+}
+
+.children {
+    position: relative;
+    height: 200px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: sienna;
+}</code></pre>
+<pre><code class="html">&lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=&quot;children&quot;&gt;
+        Hello World
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p><img src="../../themes/fluid/source/img/image-20200405220811446.png" srcset="/img/loading.gif" alt="image-20200405220811446"></p>
 
             </div>
             <hr>
