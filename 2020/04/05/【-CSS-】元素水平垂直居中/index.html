@@ -133,7 +133,7 @@
                   
                   <span class="post-meta">
                     <i class="far fa-chart-bar"></i>
-                    253 字
+                    423 字
                   </span>
                 
 
@@ -141,7 +141,7 @@
                   
                   <span class="post-meta">
                       <i class="far fa-clock"></i>
-                      1 分钟
+                      2 分钟
                   </span>
                 
 
@@ -194,10 +194,7 @@
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 <p><img src="/img/image-20200405214218652.png" srcset="/img/loading.gif" alt="image-20200405214218652"></p>
-<h3 id="3、对于宽度未知的块级元素"><a href="#3、对于宽度未知的块级元素" class="headerlink" title="3、对于宽度未知的块级元素"></a>3、对于宽度未知的块级元素</h3><blockquote>
-<p><strong>方法1：设置table</strong></p>
-</blockquote>
-<pre><code class="css">.parent {
+<h3 id="3、对于宽度未知的块级元素"><a href="#3、对于宽度未知的块级元素" class="headerlink" title="3、对于宽度未知的块级元素"></a>3、对于宽度未知的块级元素</h3><h4 id="方法1：设置table"><a href="#方法1：设置table" class="headerlink" title="方法1：设置table"></a><strong>方法1：设置table</strong></h4><pre><code class="css">.parent {
     width: 400px;
     background-color: silver;
 }
@@ -213,10 +210,7 @@
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 <p><img src="/img/image-20200405213237414.png" srcset="/img/loading.gif" alt="image-20200405213237414"></p>
-<blockquote>
-<p><strong>方法2：设置inline-block</strong></p>
-</blockquote>
-<pre><code class="css">.parent {
+<h4 id="方法2：设置inline-block"><a href="#方法2：设置inline-block" class="headerlink" title="方法2：设置inline-block"></a><strong>方法2：设置inline-block</strong></h4><pre><code class="css">.parent {
     width: 400px;
     background-color: silver;
     text-align: center;
@@ -233,6 +227,24 @@
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 <p><img src="/img/image-20200405214840461.png" srcset="/img/loading.gif" alt="image-20200405214840461"></p>
+<h4 id="方法3：弹性盒子-display-flex"><a href="#方法3：弹性盒子-display-flex" class="headerlink" title="方法3：弹性盒子 display:flex"></a>方法3：弹性盒子 display:flex</h4><pre><code class="css">.parent {
+    width: 400px;
+    height: 400px;
+    background-color: silver;
+    display: flex;
+    justify-content: center;
+}
+
+.children {
+    height: 200px;
+    background-color: sienna;
+}</code></pre>
+<pre><code class="html">&lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=&quot;children&quot;&gt;
+        Hello World
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p><img src="/img/image-20200405221417435.png" srcset="/img/loading.gif" alt="image-20200405221417435"></p>
 <h2 id="二、垂直居中"><a href="#二、垂直居中" class="headerlink" title="二、垂直居中"></a>二、垂直居中</h2><h3 id="1、position、top、transform-实现"><a href="#1、position、top、transform-实现" class="headerlink" title="1、position、top、transform 实现"></a>1、position、top、transform 实现</h3><pre><code class="css">.parent {
     width: 400px;
     height: 400px;
@@ -251,7 +263,48 @@
         Hello World
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-<p><img src="../../themes/fluid/source/img/image-20200405220811446.png" srcset="/img/loading.gif" alt="image-20200405220811446"></p>
+<p><img src="/img/image-20200405220811446.png" srcset="/img/loading.gif" alt="image-20200405220811446"></p>
+<h3 id="2、弹性盒子-display-flex-实现"><a href="#2、弹性盒子-display-flex-实现" class="headerlink" title="2、弹性盒子 display:flex 实现"></a>2、弹性盒子 display:flex 实现</h3><pre><code class="css">.parent {
+    width: 400px;
+    height: 400px;
+    background-color: silver;
+    display: flex;
+    align-items: center;
+}
+
+.children {
+    height: 200px;
+    background-color: sienna;
+}</code></pre>
+<pre><code class="html">&lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=&quot;children&quot;&gt;
+        Hello World
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p><img src="/img/image-20200405221804086.png" srcset="/img/loading.gif" alt="image-20200405221804086"></p>
+<h2 id="三、水平且垂直居中"><a href="#三、水平且垂直居中" class="headerlink" title="三、水平且垂直居中"></a>三、水平且垂直居中</h2><blockquote>
+<p>结合上述两种方法即刻</p>
+</blockquote>
+<h3 id="例如：弹性盒子"><a href="#例如：弹性盒子" class="headerlink" title="例如：弹性盒子"></a>例如：弹性盒子</h3><pre><code class="css">.parent {
+    width: 400px;
+    height: 400px;
+    background-color: silver;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.children {
+    width: 200px;
+    height: 200px;
+    background-color: sienna;
+}</code></pre>
+<pre><code class="html">&lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=&quot;children&quot;&gt;
+        Hello World
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p><img src="/img/image-20200405222613740.png" srcset="/img/loading.gif" alt="image-20200405222613740"></p>
 
             </div>
             <hr>
