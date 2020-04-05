@@ -133,7 +133,7 @@
                   
                   <span class="post-meta">
                     <i class="far fa-chart-bar"></i>
-                    185 字
+                    182 字
                   </span>
                 
 
@@ -179,8 +179,7 @@
 <blockquote>
 <p>width, margin 实现</p>
 </blockquote>
-<pre><code>```css
-.parent {
+<pre><code class="css">.parent {
     width: 400px;
     background-color: silver;
 }
@@ -190,23 +189,19 @@
   margin: 0 auto;
     text-align: center;
     border: 1px sienna solid;
-}
-```
-
-```html
-&lt;div class=&quot;parent&quot;&gt;
+}</code></pre>
+<pre><code class="html">&lt;div class=&quot;parent&quot;&gt;
     &lt;div class=&quot;children&quot;&gt;
       Hello World
     &lt;/div&gt;
-&lt;/div&gt;
-```</code></pre><p><img src="/img/image-20200405214218652.png" srcset="/img/loading.gif" alt="image-20200405214218652"></p>
+&lt;/div&gt;</code></pre>
+<p><img src="/img/image-20200405214218652.png" srcset="/img/loading.gif" alt="image-20200405214218652"></p>
 </li>
 <li><p>对于宽度未知的块级元素:</p>
 <blockquote>
 <p><strong>方法1：设置table</strong></p>
 </blockquote>
-<pre><code>```css
-.parent {
+<pre><code class="css">.parent {
     width: 400px;
     background-color: silver;
 }
@@ -215,16 +210,13 @@
     display:table;
     margin:0 auto;
     border:1px solid red;
-}
-```
-
-```html
-&lt;div class=&quot;parent&quot;&gt;
-    &lt;div class=&quot;children&quot;&gt;
-      Hello World
-    &lt;/div&gt;
-&lt;/div&gt;
-```</code></pre><p>  <img src="/img/image-20200405213237414.png" srcset="/img/loading.gif" alt="image-20200405213237414"></p>
+}</code></pre>
+<pre><code class="html">  &lt;div class=&quot;parent&quot;&gt;
+      &lt;div class=&quot;children&quot;&gt;
+        Hello World
+      &lt;/div&gt;
+  &lt;/div&gt;</code></pre>
+<p>  <img src="/img/image-20200405213237414.png" srcset="/img/loading.gif" alt="image-20200405213237414"></p>
 <blockquote>
 <p><strong>方法2：设置inline-block</strong></p>
 </blockquote>
@@ -232,19 +224,20 @@
       width: 400px;
       background-color: silver;
       text-align: center;
-  }
+}
 
-  .children {
-      height: 200px;
-      display:inline-block;
-      border: 1px sienna solid;
-  }</code></pre>
-<pre><code class="html">  &lt;div class=&quot;parent&quot;&gt;
-      &lt;div class=&quot;children&quot;&gt;
-             Hello World
-      &lt;/div&gt;
-  &lt;/div&gt;</code></pre>
-<p>  <img src="/img/image-20200405214840461.png" srcset="/img/loading.gif" alt="image-20200405214840461"></p>
+.children {
+    height: 200px;
+    display:inline-block;
+    border: 1px sienna solid;
+}</code></pre>
+<pre><code>```html
+&lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=&quot;children&quot;&gt;
+           Hello World
+    &lt;/div&gt;
+&lt;/div&gt;
+```</code></pre><p>  <img src="/img/image-20200405214840461.png" srcset="/img/loading.gif" alt="image-20200405214840461"></p>
 </li>
 </ul>
 
