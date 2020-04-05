@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Warren">
   <meta name="keywords" content="">
-  <title>标签 - Warren blog</title>
+  <title>【 Git 】Git 链接 Github远程库 - Warren blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
@@ -43,7 +43,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -121,6 +121,33 @@
             </span>
 
             
+              
+                <p class="mt-3 post-meta">
+                  <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+                  星期日, 四月 5日 2020, 11:08 晚上
+                </p>
+              
+
+              <p class="mt-1">
+                
+                  
+                  <span class="post-meta">
+                    <i class="far fa-chart-bar"></i>
+                    420 字
+                  </span>
+                
+
+                
+                  
+                  <span class="post-meta">
+                      <i class="far fa-clock"></i>
+                      1 分钟
+                  </span>
+                
+
+                
+              </p>
+            
           </div>
 
           
@@ -131,24 +158,138 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5 z-depth-3" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
+      
 
-<div class="text-center tagcloud">
-  <a href="/tags/CSS/" style="font-size: 15px; color: #bbe">CSS</a> <a href="/tags/git/" style="font-size: 30px; color: #337ab7">git</a> <a href="/tags/github/" style="font-size: 15px; color: #bbe">github</a> <a href="/tags/%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/" style="font-size: 15px; color: #bbe">水平垂直居中</a>
-</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5 z-depth-3" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <div class="markdown-body">
+              <h1 id="Git-链接-Github远程库"><a href="#Git-链接-Github远程库" class="headerlink" title="Git 链接 Github远程库"></a>Git 链接 Github远程库</h1><h2 id="1-创建SSH-Key。"><a href="#1-创建SSH-Key。" class="headerlink" title="1.创建SSH Key。"></a>1.创建SSH Key。</h2><p>在用户主目录（C:\Users\Administrator）下，看看有没有.ssh文件，如果有，再看文件下有没有id_rsa和id_rsa.pub这两个文件，如果已经有了，可直接到下一步。如果没有，打开Git Bash，输入命令，创建SSH Key</p>
+<p><code>ssh-keygen -t rsa -C &quot;123@126.com&quot; //123 是你自己注册GitHub的邮箱</code></p>
+<p>（注：id_rsa.pub是公钥，可以公开，id_rsa是私钥，不要公开）</p>
+<h2 id="2-本地创建git版本管理仓库"><a href="#2-本地创建git版本管理仓库" class="headerlink" title="2.本地创建git版本管理仓库"></a>2.本地创建git版本管理仓库</h2><p><code>git init</code></p>
+<h2 id="3-github创建repository仓库"><a href="#3-github创建repository仓库" class="headerlink" title="3.github创建repository仓库"></a>3.github创建repository仓库</h2><p>下一步</p>
+<h2 id="4-链接git与github"><a href="#4-链接git与github" class="headerlink" title="4.链接git与github"></a>4.链接git与github</h2><p>创建新的GitHub仓库后</p>
+<p><strong>在你的本地git版本仓库下打开Git Bash，输入以下指令链接Git与Github仓库</strong></p>
+<p><code>git remote add origin git@github.com:jxhud/exercise.git</code></p>
+<p>上面的<code>git@github.com:jxhud/exercise.git</code>是我的GitHub远程仓库，你自行替换成你的就行</p>
+<h2 id="5-Git推送到GitHub"><a href="#5-Git推送到GitHub" class="headerlink" title="5.Git推送到GitHub"></a>5.Git推送到GitHub</h2><p><code>git push -u origin master</code> </p>
+<p>关联后,第一次因为master分支是空的，加上了-u，推送master分支的所有内容命令</p>
+<p>此后，每次本地提交后，就可以使用命令<code>git push origin master</code>推送最新修改</p>
+<p>推送到其他分支也可以把master替换成其他就行。</p>
+<p><strong>注意</strong> ：推送前Git的仓库里必须要有版本快照，不能为空，所以要先创建提交，如果Git仓库里本来就有快照，就可以直接推送</p>
+<p><strong>注意</strong>：如果出现这种情况：</p>
+<pre><code class="java">error: failed to push some refs to &#39;git@github.com:jxhud/exercise.git&#39;</code></pre>
+<p>那么就是你本地的文件和GitHub上的不一致，要使用命令</p>
+<p><code>git pull origin master</code></p>
+<p>把远程仓库的文件下载下来与你的工作目录合并，再推送</p>
 
-              </div>
             </div>
+            <hr>
+            <div>
+              <p>
+                
+                  <span>
+                <i class="iconfont icon-inbox"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/git/">git</a>
+                      &nbsp;
+                    
+                  </span>&nbsp;&nbsp;
+                
+                
+                  <span>
+                <i class="iconfont icon-tag"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/git/">git</a>
+                    
+                      <a class="hover-with-bg" href="/tags/github/">github</a>
+                    
+                  </span>
+                
+              </p>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/2020/04/05/Git%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">
+                        <span class="hidden-mobile">【 Git 】Git使用手册</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="fa fa-chevron-right"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+              
+                <!-- Comments -->
+                <div class="comments" id="comments">
+                  
+                  
+  <div id="vcomments"></div>
+  <script defer src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script defer src="//unpkg.com/valine/dist/Valine.min.js"></script>
+
+  <script type="text/javascript">
+    var notify = 'true' === 'true';
+    var verify = 'true' === 'true';
+    var oldLoad = window.onload;
+    window.onload = function () {
+      new Valine({
+        el: '#vcomments',
+        notify: notify,
+        verify: verify,
+        app_id: "plKXUYr4j5DVFgq4MozzqNhk-gzGzoHsz",
+        app_key: "HwvSIxwKVXvkOsLK8YaqnU1u",
+        placeholder: "ヾﾉ≧∀≦)o来啊，快活啊!",
+        avatar: "/retro",
+        meta: ['nick', 'mail', 'link'],
+        pageSize: "10",
+      });
+      oldLoad && oldLoad();
+    };
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://valine.js.org" target="_blank" rel="nofollow noopener noopener">comments
+      powered by Valine.</a></noscript>
+
+
+                </div>
+              
           </div>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc-start"></div>
+<div id="toc">
+  <p class="h5"><i class="far fa-list-alt"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
   </main>
 
@@ -213,6 +354,59 @@
 
 
 
+  
+  <script  src="https://cdn.staticfile.org/tocbot/4.10.0/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var navHeight = $('#navbar').height();
+      var toc = $('#toc');
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+      var tocLimMax = 2 * boardTop + boardCtn.height();
+
+      $(window).scroll(function () {
+        var tocLimMin = $('#toc-start').offset().top - navHeight;
+        var scroH = document.body.scrollTop + document.documentElement.scrollTop;
+
+        if (tocLimMin <= scroH && scroH <= tocLimMax) {
+          toc.css({
+            'display': 'block',
+            'position': 'fixed',
+            'top': navHeight,
+          });
+        } else if (scroH <= tocLimMin) {
+          toc.css({
+            'position': '',
+            'top': '',
+          });
+        } else if (scroH > tocLimMax) {
+          toc.css('display', 'none');
+        }
+      });
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc > p').css('visibility', 'visible');
+      }
+      var offset = boardCtn.css('margin-right')
+      $('#toc-ctn').css({
+        'right': offset
+      })
+    });
+  </script>
+
+
+
 
 
   <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
@@ -244,7 +438,7 @@
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "标签&nbsp;",
+        "【 Git 】Git 链接 Github远程库&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 100,
