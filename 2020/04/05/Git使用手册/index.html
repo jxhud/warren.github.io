@@ -194,11 +194,11 @@
 <p>三种操作：(ps：下面操作中HEAD后面的波浪线表示该仓库的上一个版本（这里的版本也称作快照），两个波浪线表示现在HEAD指向的版本的前两个版本，如果是前n个版本可以写作HEAD~n)</p>
 </blockquote>
 <ul>
-<li><p><strong><code>git reset --soft HEAD~</code></strong></p>
-<ul>
-<li>执行该操作后：<pre><code>- 移动HEAD的指向，将其指向上一个版本</code></pre></li>
+<li><strong><code>git reset --soft HEAD~</code></strong></li>
 </ul>
-</li>
+<ul>
+<li><p>执行该操作后：移动HEAD的指向，将其指向上一个版本</p>
+<ul>
 <li><p><strong><code>git reset --mixed HEAD~</code></strong></p>
 <ul>
 <li>执行该操作后：<ul>
@@ -209,12 +209,14 @@
 </ul>
 </li>
 <li><p><strong><code>git reset --hard HEAD~</code></strong></p>
-<p>  （<strong>注意危险：该操作会将项目目录区域下的文件覆盖掉，本地的文件可能丢失，谨慎操作！</strong>）</p>
+<p> （<strong>注意危险：该操作会将项目目录区域下的文件覆盖掉，本地的文件可能丢失，谨慎操作！</strong>）</p>
 <ul>
 <li>执行该操作后：<ul>
 <li>移动HEAD的指向，将其指向前一个版本快照</li>
 <li>将HEAD移动后指向的版本快照回滚到暂存区域</li>
 <li>将暂存区域的文件回滚到项目目录区域（<strong>万分注意：这里这步是会覆盖项目文件的</strong>）</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
