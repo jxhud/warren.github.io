@@ -194,12 +194,12 @@
 <p>三种操作：(ps：下面操作中HEAD后面的波浪线表示该仓库的上一个版本（这里的版本也称作快照），两个波浪线表示现在HEAD指向的版本的前两个版本，如果是前n个版本可以写作HEAD~n)</p>
 </blockquote>
 <ul>
-<li><p><strong>==git reset –soft HEAD~==</strong></p>
+<li><p><strong><code>git reset --soft HEAD~</code></strong></p>
 <ul>
 <li>执行该操作后：<pre><code>- 移动HEAD的指向，将其指向上一个版本</code></pre></li>
 </ul>
 </li>
-<li><p><strong>==git reset –mixed HEAD~==</strong></p>
+<li><p><strong><code>git reset --mixed HEAD~</code></strong></p>
 <ul>
 <li>执行该操作后：<ul>
 <li>移动HEAD的指向，将其指向上一个快照</li>
@@ -208,8 +208,8 @@
 </li>
 </ul>
 </li>
-<li><p><strong>==git reset –hard HEAD~==</strong></p>
-<p>  （==注意危险：该操作会将项目目录区域下的文件覆盖掉，本地的文件可能丢失，谨慎操作！==）</p>
+<li><p><strong><code>git reset --hard HEAD~</code></strong></p>
+<p>  （<strong>注意危险：该操作会将项目目录区域下的文件覆盖掉，本地的文件可能丢失，谨慎操作！</strong>）</p>
 <ul>
 <li>执行该操作后：<ul>
 <li>移动HEAD的指向，将其指向前一个版本快照</li>
@@ -222,16 +222,16 @@
 </ul>
 <h4 id="2）checkout"><a href="#2）checkout" class="headerlink" title="2）checkout"></a>2）checkout</h4><ul>
 <li><p>将版本快照滚到工作目录和暂存区域里去</p>
-<p>  <strong>==git checkout 版本号==</strong></p>
+<p>  <strong><code>git checkout 版本号</code></strong></p>
 </li>
 </ul>
 <ul>
 <li><p>将暂存区域里的东西回滚到工作目录里来</p>
-<p>  <strong>==git checkout==</strong></p>
+<p>  <strong><code>git checkout</code></strong></p>
 <p>  单个文件：<strong>git checkout 文件名</strong></p>
 </li>
 </ul>
-<p> ==总结：==</p>
+<p> <strong>总结：</strong></p>
 <ol>
 <li><strong>–soft、–mixed、–hard分别回滚一级二级三级，程度递增，特别hard会回滚到项目目录覆盖到本地，需要注意</strong></li>
 <li><strong>默认是–mixed</strong></li>
@@ -241,7 +241,7 @@
 </ol>
 </li>
 </ol>
-<h3 id="（五）对比文件"><a href="#（五）对比文件" class="headerlink" title="（五）对比文件"></a>（五）对比文件</h3><h4 id="1-比较暂存区域与工作目录"><a href="#1-比较暂存区域与工作目录" class="headerlink" title="(1)比较暂存区域与工作目录"></a>(1)比较暂存区域与工作目录</h4><p>==<strong>git diff</strong>==</p>
+<h3 id="（五）对比文件"><a href="#（五）对比文件" class="headerlink" title="（五）对比文件"></a>（五）对比文件</h3><h4 id="1-比较暂存区域与工作目录"><a href="#1-比较暂存区域与工作目录" class="headerlink" title="(1)比较暂存区域与工作目录"></a>(1)比较暂存区域与工作目录</h4><p><code>git diff</code></p>
 <p>对比文件较多时，可以操作移动，简单操作如下：</p>
 <ul>
 <li>按键盘上的<code>j</code>表示向下移动一行</li>
@@ -257,43 +257,43 @@
 <li><code>?搜索词</code> 从下往上搜索该词语</li>
 <li><code>h</code>帮助窗口</li>
 </ul>
-<h4 id="2-比较仓库里的两个版本"><a href="#2-比较仓库里的两个版本" class="headerlink" title="(2)比较仓库里的两个版本"></a>(2)比较仓库里的两个版本</h4><p><strong>==git diff 版本号1 版本号2==</strong></p>
-<h4 id="3-比较当前工作目录和仓库里的版本快照"><a href="#3-比较当前工作目录和仓库里的版本快照" class="headerlink" title="(3)比较当前工作目录和仓库里的版本快照"></a>(3)比较当前工作目录和仓库里的版本快照</h4><p><strong>==git diff 版本号==</strong></p>
+<h4 id="2-比较仓库里的两个版本"><a href="#2-比较仓库里的两个版本" class="headerlink" title="(2)比较仓库里的两个版本"></a>(2)比较仓库里的两个版本</h4><p><code>git diff 版本号1 版本号2</code></p>
+<h4 id="3-比较当前工作目录和仓库里的版本快照"><a href="#3-比较当前工作目录和仓库里的版本快照" class="headerlink" title="(3)比较当前工作目录和仓库里的版本快照"></a>(3)比较当前工作目录和仓库里的版本快照</h4><p><code>git diff 版本号</code></p>
 <p>另外：当前工作目录和最新的仓库版本，即HEAD所指的版本比较</p>
-<p>==git diff HEAD==</p>
+<p><code>git diff HEAD</code></p>
 <h4 id="4-比较暂存区域与仓库"><a href="#4-比较暂存区域与仓库" class="headerlink" title="(4)比较暂存区域与仓库"></a>(4)比较暂存区域与仓库</h4><p>1.仓库最新的版本快照与暂存区文件比较</p>
-<p><strong>==git diff –cached==</strong></p>
+<p><code>git diff --cached</code></p>
 <p>2.指定仓库的一个版本快照与暂存区文件比较</p>
-<p><strong>==git diff –cached 版本号==</strong></p>
+<p><code>git diff --cached 版本号</code></p>
 <h3 id="（六）修改"><a href="#（六）修改" class="headerlink" title="（六）修改"></a>（六）修改</h3><h4 id="1-修改提交说明"><a href="#1-修改提交说明" class="headerlink" title="(1)修改提交说明"></a>(1)修改提交说明</h4><p>如果你想改变之前的提交说明，那么就</p>
-<p><strong>==git commit –amend==</strong></p>
+<p><code>git commit --amend</code></p>
 <p>或者直接</p>
-<p><strong>==git commit –amend -m “你改变后的提交说明”==</strong></p>
+<p><code>git commit --amend -m &quot;你改变后的提交说明&quot;</code></p>
 <h4 id="2-删除文件"><a href="#2-删除文件" class="headerlink" title="(2)删除文件"></a>(2)删除文件</h4><ul>
-<li><p>==git rm 文件名==：删除暂存区与工作目录里的该文件，仓库里的不会删除，如果想删除仓库里的请回滚</p>
+<li><p><code>git rm 文件名</code>：删除暂存区与工作目录里的该文件，仓库里的不会删除，如果想删除仓库里的请回滚</p>
 </li>
-<li><p>==git rm -f 文件名==：如果暂存区与工作目录里的文件出现同名不同内容的情况，用上面那种就会提示你有情况了，你可以用该命令强制一起删除</p>
+<li><p><code>git rm -f 文件名</code>：如果暂存区与工作目录里的文件出现同名不同内容的情况，用上面那种就会提示你有情况了，你可以用该命令强制一起删除</p>
 </li>
-<li><p>==git rm –cached 文件名==：只删除暂存区的文件而不删除工作目录下的文件</p>
+<li><p><code>git rm --cached 文件名</code>：只删除暂存区的文件而不删除工作目录下的文件</p>
 </li>
 </ul>
-<h4 id="3-文件重命名"><a href="#3-文件重命名" class="headerlink" title="(3)文件重命名"></a>(3)文件重命名</h4><p><strong>==git mv 原文件名 新文件名==</strong></p>
+<h4 id="3-文件重命名"><a href="#3-文件重命名" class="headerlink" title="(3)文件重命名"></a>(3)文件重命名</h4><p><code>git mv 原文件名 新文件名</code></p>
 <h2 id="四、分支"><a href="#四、分支" class="headerlink" title="四、分支"></a>四、分支</h2><blockquote>
 <p>关于什么是git分支，他有什么优点，为什么要创建分支，自行百度</p>
 </blockquote>
-<h3 id="（一）创建分支"><a href="#（一）创建分支" class="headerlink" title="（一）创建分支"></a>（一）创建分支</h3><p><strong>==git branch 分支名称==</strong></p>
+<h3 id="（一）创建分支"><a href="#（一）创建分支" class="headerlink" title="（一）创建分支"></a>（一）创建分支</h3><p><code>git branch 分支名称</code></p>
 <h3 id="（二）切换分支"><a href="#（二）切换分支" class="headerlink" title="（二）切换分支"></a>（二）切换分支</h3><blockquote>
 <p>把HEAD指向的分支切换到你需要的分支上来</p>
 </blockquote>
-<p><strong>==git checkout 分支名==</strong></p>
+<p><code>git checkout 分支名</code></p>
 <p>【偷懒】创建新分支并且切换到新分支里去，连续做两步</p>
-<p><strong>==git checkout -b 分支名==</strong></p>
+<p><code>git checkout -b 分支名</code></p>
 <h3 id="（三）合并分支"><a href="#（三）合并分支" class="headerlink" title="（三）合并分支"></a>（三）合并分支</h3><p>把别处的分支合并到你现在HEAD所指向的分支上来</p>
-<p><strong>==git merge 分支名==</strong></p>
-<h3 id="（四）删除分支"><a href="#（四）删除分支" class="headerlink" title="（四）删除分支"></a>（四）删除分支</h3><p><strong>==git branch -d 分支名==</strong></p>
+<p><code>git merge 分支名</code></p>
+<h3 id="（四）删除分支"><a href="#（四）删除分支" class="headerlink" title="（四）删除分支"></a>（四）删除分支</h3><p><code>git branch -d 分支名</code></p>
 <p>或者写两个小横线的全名</p>
-<p><strong>==git branch –delete 分支名==</strong></p>
-<h3 id="（五）匿名分支"><a href="#（五）匿名分支" class="headerlink" title="（五）匿名分支"></a>（五）匿名分支</h3><p><strong>==git checkout HEAD~==</strong></p>
+<p><code>git branch --delete 分支名</code></p>
+<h3 id="（五）匿名分支"><a href="#（五）匿名分支" class="headerlink" title="（五）匿名分支"></a>（五）匿名分支</h3><p><code>git checkout HEAD~</code></p>
 <p>HEAD处于游离状态，你可以对这个创建的匿名分支作实验性操作，当HEAD回到正常分支时匿名分支会销毁</p>
 
             </div>
