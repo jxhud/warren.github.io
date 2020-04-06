@@ -133,7 +133,7 @@
                   
                   <span class="post-meta">
                     <i class="far fa-chart-bar"></i>
-                    438 字
+                    504 字
                   </span>
                 
 
@@ -237,6 +237,25 @@
 
 .children {
     height: 200px;
+    background-color: sienna;
+}</code></pre>
+<pre><code class="html">&lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=&quot;children&quot;&gt;
+        Hello World
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<p><img src="/img/image-20200405221417435.png" srcset="/img/loading.gif" alt="image-20200405221417435"></p>
+<h4 id="方法4：父盒子设置相对，子盒子绝对，left、transform-移位实现"><a href="#方法4：父盒子设置相对，子盒子绝对，left、transform-移位实现" class="headerlink" title="方法4：父盒子设置相对，子盒子绝对，left、transform 移位实现"></a>方法4：父盒子设置相对，子盒子绝对，left、transform 移位实现</h4><pre><code class="css">.parent {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    background-color: silver;
+}
+.children {
+    position: absolute;
+    height: 200px;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: sienna;
 }</code></pre>
 <pre><code class="html">&lt;div class=&quot;parent&quot;&gt;
