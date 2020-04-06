@@ -133,7 +133,7 @@
                   
                   <span class="post-meta">
                     <i class="far fa-chart-bar"></i>
-                    448 字
+                    731 字
                   </span>
                 
 
@@ -141,7 +141,7 @@
                   
                   <span class="post-meta">
                       <i class="far fa-clock"></i>
-                      1 分钟
+                      3 分钟
                   </span>
                 
 
@@ -233,6 +233,57 @@
 }
 
 .clear {
+    clear: both; // 核心代码
+}</code></pre>
+<p>效果：</p>
+<p><img src="/img/image-20200406110254012.png" srcset="/img/loading.gif" alt="清除浮动后"></p>
+<blockquote>
+<p>知识点补充：</p>
+<p>clear 属性：有四个可设置的值——&gt; left、right、both、none</p>
+<p>分别表示清除左边、右边、所有、不清除四种情况，元素设置该属性后相当于，虽然浮动元素不在文档流里了，但是设置了该属性就依然当他们存在，想念他们，给他们留空间。</p>
+</blockquote>
+<h3 id="方法2：父级添加overflow属性，或者设置高度【推荐指数：-】"><a href="#方法2：父级添加overflow属性，或者设置高度【推荐指数：-】" class="headerlink" title="方法2：父级添加overflow属性，或者设置高度【推荐指数：)】"></a>方法2：父级添加overflow属性，或者设置高度【推荐指数：<img src="/img/%E5%B0%8F%E6%98%9F%E6%98%9F.PNG" srcset="/img/loading.gif" alt="img">)<img src="/img/%E5%B0%8F%E6%98%9F%E6%98%9F.PNG" srcset="/img/loading.gif" alt="img">】</h3><pre><code class="html">&lt;div class=&quot;out&quot;&gt;
+    &lt;div class=&quot;float&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<pre><code class="css">.out {
+    width: 400px;
+    overflow: hidden; // 核心代码 设置为 auto 也行
+    background-color: silver;
+}
+
+.float {
+    float: right;
+    width: 100px;
+    height: 200px;
+    background-color: red;
+}</code></pre>
+<p>效果：</p>
+<p><img src="/img/image-20200406110254012.png" srcset="/img/loading.gif" alt="清除浮动后"></p>
+<h3 id="方法3：建立伪类选择器清除浮动【推荐指数：-】"><a href="#方法3：建立伪类选择器清除浮动【推荐指数：-】" class="headerlink" title="方法3：建立伪类选择器清除浮动【推荐指数：)))】"></a>方法3：建立伪类选择器清除浮动【推荐指数：<img src="/img/%E5%B0%8F%E6%98%9F%E6%98%9F.PNG" srcset="/img/loading.gif" alt="img">)<img src="/img/%E5%B0%8F%E6%98%9F%E6%98%9F.PNG" srcset="/img/loading.gif" alt="img">)<img src="/img/%E5%B0%8F%E6%98%9F%E6%98%9F.PNG" srcset="/img/loading.gif" alt="img">)<img src="/img/%E5%B0%8F%E6%98%9F%E6%98%9F.PNG" srcset="/img/loading.gif" alt="img">】</h3><pre><code class="html">&lt;div class=&quot;out&quot;&gt;
+    &lt;div class=&quot;float&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<pre><code class="css">.out {
+    width: 400px;
+    background-color: silver;
+}
+
+.float {
+    float: right;
+    width: 100px;
+    height: 200px;
+    background-color: red;
+}
+
+.out::after {
+    /* 设置添加子元素的内容是空 */
+    content: &#39;&#39;;  
+    /* 设置添加子元素为块级元素 */
+    display: block;
+    /* 设置添加的子元素的高度0 */
+    height: 0;
+    /* 设置添加子元素看不见 */
+    visibility: hidden;
+    /* 设置clear：both */
     clear: both;
 }</code></pre>
 <p>效果：</p>
