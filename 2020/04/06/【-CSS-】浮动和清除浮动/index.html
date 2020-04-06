@@ -133,7 +133,7 @@
                   
                   <span class="post-meta">
                     <i class="far fa-chart-bar"></i>
-                    374 字
+                    448 字
                   </span>
                 
 
@@ -215,7 +215,29 @@
 </blockquote>
 </li>
 </ul>
-<h2 id="2、如何清除浮动？"><a href="#2、如何清除浮动？" class="headerlink" title="2、如何清除浮动？"></a>2、如何清除浮动？</h2>
+<h2 id="2、如何清除浮动？"><a href="#2、如何清除浮动？" class="headerlink" title="2、如何清除浮动？"></a>2、如何清除浮动？</h2><h3 id="方法1：添加标签【推荐指数：】"><a href="#方法1：添加标签【推荐指数：】" class="headerlink" title="方法1：添加标签【推荐指数：】"></a>方法1：添加标签【推荐指数：<img src="/img/%E5%B0%8F%E6%98%9F%E6%98%9F.PNG" srcset="/img/loading.gif" alt="img">】</h3><pre><code class="html">&lt;div class=&quot;out&quot;&gt;
+    &lt;div class=&quot;float&quot;&gt;&lt;/div&gt;
+    &lt;!-- 新增 clear 这个标签在下方 --&gt;
+    &lt;div class=&quot;clear&quot;&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<pre><code class="css">.out {
+    width: 400px;
+    background-color: silver;
+}
+
+.float {
+    float: right;
+    width: 100px;
+    height: 200px;
+    background-color: red;
+}
+
+.clear {
+    clear: both;
+}</code></pre>
+<p>效果：</p>
+<p><img src="/img/image-20200406110254012.png" srcset="/img/loading.gif" alt="清除浮动后"></p>
+
             </div>
             <hr>
             <div>
