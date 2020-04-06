@@ -133,7 +133,7 @@
                   
                   <span class="post-meta">
                     <i class="far fa-chart-bar"></i>
-                    423 字
+                    438 字
                   </span>
                 
 
@@ -245,14 +245,14 @@
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
 <p><img src="/img/image-20200405221417435.png" srcset="/img/loading.gif" alt="image-20200405221417435"></p>
-<h2 id="二、垂直居中"><a href="#二、垂直居中" class="headerlink" title="二、垂直居中"></a>二、垂直居中</h2><h3 id="1、position、top、transform-实现"><a href="#1、position、top、transform-实现" class="headerlink" title="1、position、top、transform 实现"></a>1、position、top、transform 实现</h3><pre><code class="css">.parent {
+<h2 id="二、垂直居中"><a href="#二、垂直居中" class="headerlink" title="二、垂直居中"></a>二、垂直居中</h2><h3 id="1、父盒子设置相对，子盒子绝对，top、transform-移位实现"><a href="#1、父盒子设置相对，子盒子绝对，top、transform-移位实现" class="headerlink" title="1、父盒子设置相对，子盒子绝对，top、transform 移位实现"></a>1、父盒子设置相对，子盒子绝对，top、transform 移位实现</h3><pre><code class="css">.parent {
+    position: relative;
     width: 400px;
     height: 400px;
     background-color: silver;
 }
-
 .children {
-    position: relative;
+    position: absolute;
     height: 200px;
     top: 50%;
     transform: translateY(-50%);
@@ -263,7 +263,7 @@
         Hello World
     &lt;/div&gt;
 &lt;/div&gt;</code></pre>
-<p><img src="/img/image-20200405220811446.png" srcset="/img/loading.gif" alt="image-20200405220811446"></p>
+<p><img src="/img/image-20200405221804086.png" srcset="/img/loading.gif" alt="image-20200405220811446"></p>
 <h3 id="2、弹性盒子-display-flex-实现"><a href="#2、弹性盒子-display-flex-实现" class="headerlink" title="2、弹性盒子 display:flex 实现"></a>2、弹性盒子 display:flex 实现</h3><pre><code class="css">.parent {
     width: 400px;
     height: 400px;
