@@ -4,6 +4,68 @@
   
   
   <entry>
+    <title>【 CSS 】浮动和清除浮动</title>
+    <link href="/2020/04/06/%E3%80%90-CSS-%E3%80%91%E6%B5%AE%E5%8A%A8%E5%92%8C%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/"/>
+    <url>/2020/04/06/%E3%80%90-CSS-%E3%80%91%E6%B5%AE%E5%8A%A8%E5%92%8C%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/</url>
+    
+    <content type="html"><![CDATA[<h1 id="浮动和清除浮动"><a href="#浮动和清除浮动" class="headerlink" title="浮动和清除浮动"></a>浮动和清除浮动</h1><blockquote><p><strong>浮动的框可以向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。</strong></p><p><strong>由于浮动框不在文档的普通流中，所以文档的普通流中的块框表现得就像浮动框不存在一样。</strong></p><p>——文章参考w3school</p></blockquote><p><a href="https://www.w3school.com.cn/css/css_positioning_floating.asp" target="_blank" rel="noopener">浮动性质参考w3school</a></p><h2 id="1、探讨为什么要清除浮动？"><a href="#1、探讨为什么要清除浮动？" class="headerlink" title="1、探讨为什么要清除浮动？"></a>1、探讨为什么要清除浮动？</h2><blockquote><p>清除浮动不是取消浮动框的浮动状态，而是因为浮动元素脱离文档流导致的高度塌陷等问题需要清楚浮动来解决，看下面的例子</p></blockquote><ul><li><p>例子中的 html </p><pre><code class="html">  &lt;div class=&quot;out&quot;&gt;      &lt;div class=&quot;float&quot;&gt;&lt;/div&gt;  &lt;/div&gt;</code></pre></li><li><p>先看个不浮动的情况</p><pre><code class="css">  .out {      width: 400px;      background-color: silver;  }  .float {      width: 100px;      height: 200px;      background-color: red;  }</code></pre><p>  <img src="/img/image-20200406104548783.png" srcset="/img/loading.gif" alt="不浮动"></p></li><li><p>当子盒子浮动的时候出现的情况</p><pre><code class="css">  .out {      width: 400px;      background-color: silver;  }  .float {      float: right;      width: 100px;      height: 200px;      background-color: red;  }</code></pre><p>  <img src="/img/image-20200406104935469.png" srcset="/img/loading.gif" alt="浮动后"></p><blockquote><p>我们会发现当父盒子未设置高度控制，需要靠子盒子撑起高度，即随内容的高度增加而增加的，这种情况下，如果所有子盒子都是浮动的，就会出现父盒子高度塌陷，就像上图；或者浮动的盒子的高度比正常文档流盒子撑起的父盒子高度都高的情况下，浮动盒子就会溢出父盒子之外，清除浮动就是要解决这类情况。</p></blockquote></li></ul><h2 id="2、如何清除浮动？"><a href="#2、如何清除浮动？" class="headerlink" title="2、如何清除浮动？"></a>2、如何清除浮动？</h2>]]></content>
+    
+    
+    <categories>
+      
+      <category>CSS</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>CSS</tag>
+      
+      <tag>float</tag>
+      
+      <tag>浮动</tag>
+      
+      <tag>清除浮动</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>【 CSS 】浮动和清除浮动</title>
+    <link href="/2020/04/06/%E6%B5%AE%E5%8A%A8%E5%92%8C%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/"/>
+    <url>/2020/04/06/%E6%B5%AE%E5%8A%A8%E5%92%8C%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/</url>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+    <categories>
+      
+      <category>CSS</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>CSS</tag>
+      
+      <tag>float</tag>
+      
+      <tag>浮动</tag>
+      
+      <tag>清除浮动</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>【 Git 】Git 链接 Github远程库</title>
     <link href="/2020/04/05/Git-%E9%93%BE%E6%8E%A5-Github%E8%BF%9C%E7%A8%8B%E5%BA%93/"/>
     <url>/2020/04/05/Git-%E9%93%BE%E6%8E%A5-Github%E8%BF%9C%E7%A8%8B%E5%BA%93/</url>
