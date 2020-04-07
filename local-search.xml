@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>【 Vue 】父子组件之间数据传递</title>
+    <link href="/2020/04/07/%E3%80%90-Vue-%E3%80%91%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92/"/>
+    <url>/2020/04/07/%E3%80%90-Vue-%E3%80%91%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B9%8B%E9%97%B4%E6%95%B0%E6%8D%AE%E4%BC%A0%E9%80%92/</url>
+    
+    <content type="html"><![CDATA[<h1 id="父子组件之间数据传递"><a href="#父子组件之间数据传递" class="headerlink" title="父子组件之间数据传递"></a>父子组件之间数据传递</h1><h2 id="一、父组件向子组件传递数据"><a href="#一、父组件向子组件传递数据" class="headerlink" title="一、父组件向子组件传递数据"></a>一、父组件向子组件传递数据</h2><h3 id="1、使用-props-实现"><a href="#1、使用-props-实现" class="headerlink" title="1、使用 props 实现"></a>1、使用 props 实现</h3><pre><code class="html">&lt;div id=&quot;app&quot;&gt;    &lt;counter :number=&#39;count&#39;&gt;&lt;/counter&gt;&lt;/div&gt;&lt;script type=&quot;text/javascript&quot;&gt;    // 子组件    var counter = {        template: &#39;&lt;div&gt;{{ number }}&lt;/div&gt;&#39;,        // 使用 props 接收父组件传过来的参数        props: [            &#39;number&#39;        ]    };    var vm = new Vue({        el: &#39;#app&#39;,        components: {            counter,        },        data() {            return {                count: 0            }        }    })&lt;/script&gt;</code></pre><p><strong><p style="color: red;">注意</p></strong>：</p><blockquote><p>在 Vue 里存在一个叫做单向数据流的概念，也就是父组件可以随意的向子组件传递参数，子组件接收到父组件的参数后，只能使用，不能做修改，因为父组件传过来的可能是引用型数据，子组件乱改的话很可能影响其他组件使用这个数据。</p></blockquote>]]></content>
+    
+    
+    <categories>
+      
+      <category>Vue</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Vue</tag>
+      
+      <tag>组件</tag>
+      
+      <tag>数据传递</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>【 CSS 】浮动和清除浮动</title>
     <link href="/2020/04/06/%E3%80%90-CSS-%E3%80%91%E6%B5%AE%E5%8A%A8%E5%92%8C%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/"/>
     <url>/2020/04/06/%E3%80%90-CSS-%E3%80%91%E6%B5%AE%E5%8A%A8%E5%92%8C%E6%B8%85%E9%99%A4%E6%B5%AE%E5%8A%A8/</url>
@@ -88,8 +117,8 @@
   
   <entry>
     <title>【 CSS 】元素水平垂直居中</title>
-    <link href="/2020/04/05/%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/"/>
-    <url>/2020/04/05/%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/</url>
+    <link href="/2020/04/05/%E3%80%90-CSS-%E3%80%91%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/"/>
+    <url>/2020/04/05/%E3%80%90-CSS-%E3%80%91%E5%85%83%E7%B4%A0%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/</url>
     
     <content type="html"><![CDATA[<h1 id="【-CSS-】元素水平垂直居中"><a href="#【-CSS-】元素水平垂直居中" class="headerlink" title="【 CSS 】元素水平垂直居中"></a>【 CSS 】元素水平垂直居中</h1><h2 id="一、水平居中"><a href="#一、水平居中" class="headerlink" title="一、水平居中"></a>一、水平居中</h2><h3 id="1、对于行内元素"><a href="#1、对于行内元素" class="headerlink" title="1、对于行内元素"></a>1、对于行内元素</h3><pre><code class="css">.content {    width: 100%;    text-align: center;}</code></pre><pre><code class="html">&lt;div class=&quot;content&quot;&gt;hello&lt;/div&gt;</code></pre><h3 id="2、对于确定宽度的块级元素"><a href="#2、对于确定宽度的块级元素" class="headerlink" title="2、对于确定宽度的块级元素"></a>2、对于确定宽度的块级元素</h3><blockquote><p>width, margin 实现</p></blockquote><pre><code class="css">.parent {    width: 400px;    background-color: silver;}.children {    width: 200px;  margin: 0 auto;    text-align: center;    border: 1px sienna solid;}</code></pre><pre><code class="html">&lt;div class=&quot;parent&quot;&gt;    &lt;div class=&quot;children&quot;&gt;      Hello World    &lt;/div&gt;&lt;/div&gt;</code></pre><p><img src="/img/image-20200405214218652.png" srcset="/img/loading.gif" alt="image-20200405214218652"></p><h3 id="3、对于宽度未知的块级元素"><a href="#3、对于宽度未知的块级元素" class="headerlink" title="3、对于宽度未知的块级元素"></a>3、对于宽度未知的块级元素</h3><h4 id="方法1：设置table"><a href="#方法1：设置table" class="headerlink" title="方法1：设置table"></a><strong>方法1：设置table</strong></h4><pre><code class="css">.parent {    width: 400px;    background-color: silver;}.children {    display:table;    margin:0 auto;    border:1px solid red;}</code></pre><pre><code class="html">&lt;div class=&quot;parent&quot;&gt;    &lt;div class=&quot;children&quot;&gt;      Hello World    &lt;/div&gt;&lt;/div&gt;</code></pre><p><img src="/img/image-20200405213237414.png" srcset="/img/loading.gif" alt="image-20200405213237414"></p><h4 id="方法2：设置inline-block"><a href="#方法2：设置inline-block" class="headerlink" title="方法2：设置inline-block"></a><strong>方法2：设置inline-block</strong></h4><pre><code class="css">.parent {    width: 400px;    background-color: silver;    text-align: center;}.children {    height: 200px;    display:inline-block;    border: 1px sienna solid;}</code></pre><pre><code class="html">&lt;div class=&quot;parent&quot;&gt;    &lt;div class=&quot;children&quot;&gt;        Hello World    &lt;/div&gt;&lt;/div&gt;</code></pre><p><img src="/img/image-20200405214840461.png" srcset="/img/loading.gif" alt="image-20200405214840461"></p><h4 id="方法3：弹性盒子-display-flex"><a href="#方法3：弹性盒子-display-flex" class="headerlink" title="方法3：弹性盒子 display:flex"></a>方法3：弹性盒子 display:flex</h4><pre><code class="css">.parent {    width: 400px;    height: 400px;    background-color: silver;    display: flex;    justify-content: center;}.children {    height: 200px;    background-color: sienna;}</code></pre><pre><code class="html">&lt;div class=&quot;parent&quot;&gt;    &lt;div class=&quot;children&quot;&gt;        Hello World    &lt;/div&gt;&lt;/div&gt;</code></pre><p><img src="/img/image-20200405221417435.png" srcset="/img/loading.gif" alt="image-20200405221417435"></p><h4 id="方法4：父盒子设置相对，子盒子绝对，left、transform-移位实现"><a href="#方法4：父盒子设置相对，子盒子绝对，left、transform-移位实现" class="headerlink" title="方法4：父盒子设置相对，子盒子绝对，left、transform 移位实现"></a>方法4：父盒子设置相对，子盒子绝对，left、transform 移位实现</h4><pre><code class="css">.parent {    position: relative;    width: 400px;    height: 400px;    background-color: silver;}.children {    position: absolute;    height: 200px;    left: 50%;    transform: translateX(-50%);    background-color: sienna;}</code></pre><pre><code class="html">&lt;div class=&quot;parent&quot;&gt;    &lt;div class=&quot;children&quot;&gt;        Hello World    &lt;/div&gt;&lt;/div&gt;</code></pre><p><img src="/img/image-20200405221417435.png" srcset="/img/loading.gif" alt="image-20200405221417435"></p><h2 id="二、垂直居中"><a href="#二、垂直居中" class="headerlink" title="二、垂直居中"></a>二、垂直居中</h2><h3 id="1、父盒子设置相对，子盒子绝对，top、transform-移位实现"><a href="#1、父盒子设置相对，子盒子绝对，top、transform-移位实现" class="headerlink" title="1、父盒子设置相对，子盒子绝对，top、transform 移位实现"></a>1、父盒子设置相对，子盒子绝对，top、transform 移位实现</h3><pre><code class="css">.parent {    position: relative;    width: 400px;    height: 400px;    background-color: silver;}.children {    position: absolute;    height: 200px;    top: 50%;    transform: translateY(-50%);    background-color: sienna;}</code></pre><pre><code class="html">&lt;div class=&quot;parent&quot;&gt;    &lt;div class=&quot;children&quot;&gt;        Hello World    &lt;/div&gt;&lt;/div&gt;</code></pre><p><img src="/img/image-20200405221804086.png" srcset="/img/loading.gif" alt="image-20200405220811446"></p><h3 id="2、弹性盒子-display-flex-实现"><a href="#2、弹性盒子-display-flex-实现" class="headerlink" title="2、弹性盒子 display:flex 实现"></a>2、弹性盒子 display:flex 实现</h3><pre><code class="css">.parent {    width: 400px;    height: 400px;    background-color: silver;    display: flex;    align-items: center;}.children {    height: 200px;    background-color: sienna;}</code></pre><pre><code class="html">&lt;div class=&quot;parent&quot;&gt;    &lt;div class=&quot;children&quot;&gt;        Hello World    &lt;/div&gt;&lt;/div&gt;</code></pre><p><img src="/img/image-20200405221804086.png" srcset="/img/loading.gif" alt="image-20200405221804086"></p><h2 id="三、水平且垂直居中"><a href="#三、水平且垂直居中" class="headerlink" title="三、水平且垂直居中"></a>三、水平且垂直居中</h2><blockquote><p>结合上述两种方法即刻</p></blockquote><h3 id="例如：弹性盒子"><a href="#例如：弹性盒子" class="headerlink" title="例如：弹性盒子"></a>例如：弹性盒子</h3><pre><code class="css">.parent {    width: 400px;    height: 400px;    background-color: silver;    display: flex;    align-items: center;    justify-content: center;}.children {    width: 200px;    height: 200px;    background-color: sienna;}</code></pre><pre><code class="html">&lt;div class=&quot;parent&quot;&gt;    &lt;div class=&quot;children&quot;&gt;        Hello World    &lt;/div&gt;&lt;/div&gt;</code></pre><p><img src="/img/image-20200405222613740.png" srcset="/img/loading.gif" alt="image-20200405222613740"></p>]]></content>
     
