@@ -133,7 +133,7 @@
                   
                   <span class="post-meta">
                     <i class="far fa-chart-bar"></i>
-                    359 字
+                    568 字
                   </span>
                 
 
@@ -141,7 +141,7 @@
                   
                   <span class="post-meta">
                       <i class="far fa-clock"></i>
-                      1 分钟
+                      2 分钟
                   </span>
                 
 
@@ -169,7 +169,7 @@
           <div class="post-content mx-auto" id="post">
             
             <div class="markdown-body">
-              <h1 id="父子组件之间数据传递"><a href="#父子组件之间数据传递" class="headerlink" title="父子组件之间数据传递"></a>父子组件之间数据传递</h1><h2 id="一、父组件向子组件传递数据"><a href="#一、父组件向子组件传递数据" class="headerlink" title="一、父组件向子组件传递数据"></a>一、父组件向子组件传递数据</h2><h3 id="1、使用-props-实现"><a href="#1、使用-props-实现" class="headerlink" title="1、使用 props 实现"></a>1、使用 props 实现</h3><pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+              <h1 id="父子组件之间数据传递"><a href="#父子组件之间数据传递" class="headerlink" title="父子组件之间数据传递"></a>父子组件之间数据传递</h1><h2 id="一、父组件向子组件传递数据"><a href="#一、父组件向子组件传递数据" class="headerlink" title="一、父组件向子组件传递数据"></a>一、父组件向子组件传递数据</h2><pre><code class="html">&lt;div id=&quot;app&quot;&gt;
     &lt;counter :number=&#39;count&#39;&gt;&lt;/counter&gt;
 &lt;/div&gt;
 
@@ -228,7 +228,57 @@
         }
     }
 };</code></pre>
-<h2 id="二、子组件数据变更后向父组件传递数据"><a href="#二、子组件数据变更后向父组件传递数据" class="headerlink" title="二、子组件数据变更后向父组件传递数据"></a>二、子组件数据变更后向父组件传递数据</h2>
+<h2 id="二、子组件数据变更后向父组件传递数据"><a href="#二、子组件数据变更后向父组件传递数据" class="headerlink" title="二、子组件数据变更后向父组件传递数据"></a>二、子组件数据变更后向父组件传递数据</h2><blockquote>
+<p>子组件向父组件传值我们用事件来实现，子组件通过 this.$emit 向外触发事件，实现传递数据</p>
+</blockquote>
+<pre><code class="html">&lt;div id=&quot;app&quot;&gt;
+    &lt;!-- 这里的 @numberInc 对应子组件里 $emit 里设置的事件名称 --&gt;
+    &lt;counter :number=&#39;count&#39; @number-inc=&#39;changeNumber&#39;&gt;&lt;/counter&gt;
+    父组件的 count 值： {{ count }}
+&lt;/div&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+    var counter = {
+        template: &#39;&lt;div @click=&quot;handleClick&quot;&gt;{{ count }}&lt;/div&gt;&#39;,
+        props: [
+            &#39;number&#39;
+        ],
+        data() {
+            return {
+                count: this.number
+            }
+        },
+        methods: {
+            handleClick() {
+                this.count ++;
+                /*
+                * numberInc 事件名可以随意修改(自定义)但是不要用大写
+                * 因为在这里大小写不敏感，后面的参数个数也可以添加多个
+                */
+                this.$emit(&quot;number-inc&quot;, this.count);
+            }
+        }
+    };
+
+    var vm = new Vue({
+        el: &#39;#app&#39;,
+        components: {
+            counter,
+        },
+        data() {
+            return {
+                count: 0
+            }
+        },
+        methods: {
+            // 这里的参数名 counter 也是随便设的
+            changeNumber(counter) {
+                this.count = counter;
+            }
+        }
+    })
+&lt;/script&gt;</code></pre>
+
             </div>
             <hr>
             <div>
