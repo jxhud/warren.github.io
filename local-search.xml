@@ -4,6 +4,35 @@
   
   
   <entry>
+    <title>【 Vue 】v-slot 插槽</title>
+    <link href="/2020/04/08/%E3%80%90-Vue-%E3%80%91v-slot-%E6%8F%92%E6%A7%BD/"/>
+    <url>/2020/04/08/%E3%80%90-Vue-%E3%80%91v-slot-%E6%8F%92%E6%A7%BD/</url>
+    
+    <content type="html"><![CDATA[<h1 id="v-slot-插槽"><a href="#v-slot-插槽" class="headerlink" title="v-slot 插槽"></a>v-slot 插槽</h1><blockquote><p>v-slot</p><p><strong>缩写</strong>：<code>#</code></p><p><strong>参数</strong>：插槽名 (可选，默认值是 <code>default</code>)</p></blockquote><h2 id="一、具名插槽"><a href="#一、具名插槽" class="headerlink" title="一、具名插槽"></a>一、具名插槽</h2><blockquote><p>子组件<base-layout>模板</p></blockquote><pre><code class="html">&lt;div class=&quot;container&quot;&gt;  &lt;header&gt;    &lt;!-- header 是插槽名，是v-slot后面的名称，没写的默认default --&gt;    &lt;slot name=&quot;header&quot;&gt;&lt;/slot&gt;  &lt;/header&gt;  &lt;main&gt;    &lt;slot&gt;&lt;/slot&gt;  &lt;/main&gt;  &lt;footer&gt;    &lt;slot name=&quot;footer&quot;&gt;&lt;/slot&gt;  &lt;/footer&gt;&lt;/div&gt;</code></pre><p>一个不带 <code>name</code> 的 <code>&lt;slot&gt;</code> 出口会带有隐含的名字“default”。</p><blockquote><p>使用模板</p></blockquote><pre><code class="html">&lt;base-layout&gt;  &lt;template v-slot:header&gt;    &lt;h1&gt;这是一个插入的头模板&lt;/h1&gt;  &lt;/template&gt;  &lt;p&gt;这是default插入的模板&lt;/p&gt;  &lt;template v-slot:footer&gt;    &lt;h2&gt;这是一个插入的尾模板&lt;/h2&gt;  &lt;/template&gt;&lt;/base-layout&gt;</code></pre><p>效果：</p><p><img src="/img/image-20200408113819947.png" srcset="/img/loading.gif" alt="image-20200408113819947"></p><h2 id="二、作用域插槽"><a href="#二、作用域插槽" class="headerlink" title="二、作用域插槽"></a>二、作用域插槽</h2><p>有时让插槽内容能够访问子组件中才有的数据是很有用的。例如，设想一个带有如下模板的 <code>&lt;current-user&gt;</code> 组件</p><pre><code class="html">&lt;span&gt;  &lt;slot&gt;{{ user.lastName }}&lt;/slot&gt;&lt;/span&gt;</code></pre><p>我们可能想换掉备用内容，用名而非姓来显示。如下：</p><pre><code class="html">&lt;current-user&gt;  {{ user.firstName }}&lt;/current-user&gt;</code></pre><p>然而上述代码不会正常工作，因为只有 <code>&lt;current-user&gt;</code> 组件可以访问到 <code>user</code> 而我们提供的内容是在父级渲染的，在父级组件上使用user是访问不到数据的。</p><p>为了让 <code>user</code> 在父级的插槽内容中可用，我们可以将 <code>user</code> 作为 <code>&lt;slot&gt;</code> 元素的一个属性绑定上去：</p><pre><code class="html">&lt;span&gt;  &lt;slot :user=&quot;user&quot;&gt;    {{ user.lastName }}  &lt;/slot&gt;&lt;/span&gt;</code></pre><pre><code class="html">&lt;current-user&gt;  &lt;!-- slotProps 这个名字可以改成你喜欢的 --&gt;  &lt;template #default=&quot;slotProps&quot;&gt;    {{ slotProps.user.firstName }}  &lt;/template&gt;&lt;/current-user&gt;</code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>Vue</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Vue</tag>
+      
+      <tag>组件</tag>
+      
+      <tag>插槽</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>【 Vue 】非父子组件通讯总线机制</title>
     <link href="/2020/04/07/%E3%80%90-Vue-%E3%80%91%E9%9D%9E%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF/"/>
     <url>/2020/04/07/%E3%80%90-Vue-%E3%80%91%E9%9D%9E%E7%88%B6%E5%AD%90%E7%BB%84%E4%BB%B6%E9%80%9A%E8%AE%AF/</url>
