@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>【 HTML 】meta标签属性</title>
+    <link href="/2020/04/09/%E3%80%90-HTML-%E3%80%91meta%E6%A0%87%E7%AD%BE%E5%B1%9E%E6%80%A7/"/>
+    <url>/2020/04/09/%E3%80%90-HTML-%E3%80%91meta%E6%A0%87%E7%AD%BE%E5%B1%9E%E6%80%A7/</url>
+    
+    <content type="html"><![CDATA[<h1 id="meta标签属性"><a href="#meta标签属性" class="headerlink" title="meta标签属性"></a>meta标签属性</h1><blockquote><p>简介: 常用于定义页面的说明，关键字，最后修改日期，和其它的元数据。这些元数据将服务于浏览器（如何布局或重载页面），搜索引擎和其它网络服务。</p></blockquote><h2 id="1、charset属性"><a href="#1、charset属性" class="headerlink" title="1、charset属性"></a>1、charset属性</h2><pre><code class="html">&lt;!-- 定义网页文档的字符集 --&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;</code></pre><h2 id="2、name-content属性"><a href="#2、name-content属性" class="headerlink" title="2、name + content属性"></a>2、name + content属性</h2><blockquote><p>网页作者、网页地址、网页版权信息、网页关键字、网页描述、搜索引擎索引方式、移动端常用视口设置</p></blockquote><pre><code class="html">&lt;!-- 网页作者 --&gt;&lt;meta name=&quot;author&quot; content=&quot;开源技术团队&quot;/&gt;&lt;!-- 网页地址 --&gt;&lt;meta name=&quot;website&quot; content=&quot;https://sanyuan0704.github.io/frontend_daily_question/&quot;/&gt;&lt;!-- 网页版权信息 --&gt; &lt;meta name=&quot;copyright&quot; content=&quot;2018-2019 demo.com&quot;/&gt;&lt;!-- 网页关键字, 用于SEO --&gt;&lt;meta name=&quot;keywords&quot; content=&quot;meta,html&quot;/&gt;&lt;!-- 网页描述 --&gt;&lt;meta name=&quot;description&quot; content=&quot;网页描述&quot;/&gt;&lt;!-- 搜索引擎索引方式，一般为all，不用深究 --&gt;&lt;meta name=&quot;robots&quot; content=&quot;all&quot; /&gt;&lt;!-- 移动端常用视口设置 --&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1.0,maximum-scale=1.0, user-scalable=no&quot;/&gt;&lt;!--   viewport参数详解：  width：宽度（数值 / device-width）（默认为980 像素）  height：高度（数值 / device-height）  initial-scale：初始的缩放比例 （范围从&gt;0 到10）  minimum-scale：允许用户缩放到的最小比例  maximum-scale：允许用户缩放到的最大比例  user-scalable：用户是否可以手动缩 (no,yes) --&gt;</code></pre><h2 id="3、http-equiv属性"><a href="#3、http-equiv属性" class="headerlink" title="3、http-equiv属性"></a>3、http-equiv属性</h2><blockquote><p>网页的过期时间 、计时刷新或跳转、禁止浏览器缓存、浏览器版本、隐藏状态栏/设置状态栏颜色</p></blockquote><pre><code class="html">&lt;!-- expires指定网页的过期时间。一旦网页过期，必须从服务器上下载。 --&gt;&lt;meta http-equiv=&quot;expires&quot; content=&quot;Fri, 12 Jan 2020 18:18:18 GMT&quot;/&gt;&lt;!-- 等待一定的时间刷新或跳转到其他url。下面1表示1秒 --&gt;&lt;meta http-equiv=&quot;refresh&quot; content=&quot;1; url=https://www.baidu.com&quot;/&gt;&lt;!-- 禁止浏览器从本地缓存中读取网页，即浏览器一旦离开网页在无法连接网络的情况下就无法访问到页面。 --&gt;&lt;meta http-equiv=&quot;pragma&quot; content=&quot;no-cache&quot;/&gt;&lt;!-- 也是设置cookie的一种方式，并且可以指定过期时间 --&gt;&lt;meta http-equiv=&quot;set-cookie&quot; content=&quot;name=value expires=Fri, 12 Jan 2001 18:18:18 GMT,path=/&quot;/&gt;&lt;!-- 使用浏览器版本 --&gt;&lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge,chrome=1&quot; /&gt;&lt;!-- 针对WebApp全屏模式，隐藏状态栏/设置状态栏颜色，content的值为default | black | black-translucent --&gt;&lt;meta name=&quot;apple-mobile-web-app-status-bar-style&quot; content=&quot;black-translucent&quot; /&gt;</code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>HTML</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>HTML</tag>
+      
+      <tag>meta</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>【 HTML 】async 和 defer 的区别</title>
     <link href="/2020/04/09/%E3%80%90-HTML-%E3%80%91async-%E5%92%8C-defer-%E7%9A%84%E5%8C%BA%E5%88%AB/"/>
     <url>/2020/04/09/%E3%80%90-HTML-%E3%80%91async-%E5%92%8C-defer-%E7%9A%84%E5%8C%BA%E5%88%AB/</url>
