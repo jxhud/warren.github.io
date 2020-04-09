@@ -8,7 +8,7 @@
     <link href="/2020/04/09/%E3%80%90-CSS-%E3%80%91%E5%93%81%E5%AD%97%E5%B8%83%E5%B1%80/"/>
     <url>/2020/04/09/%E3%80%90-CSS-%E3%80%91%E5%93%81%E5%AD%97%E5%B8%83%E5%B1%80/</url>
     
-    <content type="html"><![CDATA[<pre><code class="html">&lt;div class=&#39;div1&#39;&gt;&lt;/div&gt;&lt;div class=&#39;div2&#39;&gt;&lt;/div&gt;&lt;div class=&#39;div3&#39;&gt;&lt;/div&gt;</code></pre><pre><code class="css">.div1, .div2, .div3 {    height: 100px;}.div1 {    width: 100%;    margin: 0 auto;    background-color: blue;}.div2 {    width: 50%;    float: left;    background-color: red;}.div3 {    width: 50%;    float: left;    background-color: yellow;}</code></pre><p>效果：</p><p><img src="/img/image-20200409120750440.png" srcset="/img/loading.gif" alt="image-20200409120750440"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="品字布局"><a href="#品字布局" class="headerlink" title="品字布局"></a>品字布局</h1><blockquote><p>html</p></blockquote><pre><code class="html">&lt;div class=&#39;div1&#39;&gt;&lt;/div&gt;&lt;div class=&#39;div2&#39;&gt;&lt;/div&gt;&lt;div class=&#39;div3&#39;&gt;&lt;/div&gt;</code></pre><blockquote><p>css</p></blockquote><pre><code class="css">.div1, .div2, .div3 {    height: 100px;}.div1 {    width: 100%;    margin: 0 auto;    background-color: blue;}.div2 {    width: 50%;    float: left;    background-color: red;}.div3 {    width: 50%;    float: left;    background-color: yellow;}</code></pre><p>效果：</p><p><img src="/img/image-20200409120750440.png" srcset="/img/loading.gif" alt="image-20200409120750440"></p>]]></content>
     
     
     <categories>
