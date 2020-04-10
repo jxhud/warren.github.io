@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>【 CSS 】FlexBox 语法</title>
+    <link href="/2020/04/09/%E3%80%90-CSS-%E3%80%91FlexBox-%E8%AF%AD%E6%B3%95/"/>
+    <url>/2020/04/09/%E3%80%90-CSS-%E3%80%91FlexBox-%E8%AF%AD%E6%B3%95/</url>
+    
+    <content type="html"><![CDATA[<h1 id="FlexBox-语法"><a href="#FlexBox-语法" class="headerlink" title="FlexBox 语法"></a>FlexBox 语法</h1><blockquote><p>文章学习于阮一峰老师 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">flex 语法篇</a></p></blockquote><h2 id="一、flex-布局是什么？"><a href="#一、flex-布局是什么？" class="headerlink" title="一、flex 布局是什么？"></a>一、flex 布局是什么？</h2><blockquote><p>Flex 布局是 flexible box 的简称，弹性盒子布局，用来为盒状模型提供最大的灵活性</p></blockquote><p>任何一个容器都可以指定为 Flex 布局</p><pre><code class="css">.box{  display: flex;}</code></pre><p>行内元素也可以使用 Flex 布局</p><pre><code class="css">.box{  display: inline-flex;}</code></pre><p>Webkit 内核的浏览器 ,必须加上<code>-webkit</code>前缀</p><pre><code class="css">.box{  display: -webkit-flex; /* Safari */  display: flex;}</code></pre><p style='color="red"'>注意：</p><p>设为 Flex 布局以后，子元素的<code>float</code>、<code>clear</code>和<code>vertical-align</code>属性将失效</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>CSS</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>CSS</tag>
+      
+      <tag>FlexBox</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>【 CSS 】品字布局</title>
     <link href="/2020/04/09/%E3%80%90-CSS-%E3%80%91%E5%93%81%E5%AD%97%E5%B8%83%E5%B1%80/"/>
     <url>/2020/04/09/%E3%80%90-CSS-%E3%80%91%E5%93%81%E5%AD%97%E5%B8%83%E5%B1%80/</url>
