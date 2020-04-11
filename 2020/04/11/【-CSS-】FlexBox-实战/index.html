@@ -17,7 +17,7 @@
   <meta name="description" content="">
   <meta name="author" content="Warren">
   <meta name="keywords" content="">
-  <title>【 CSS 】FlexBox 语法 - Warren blog</title>
+  <title>【 CSS 】FlexBox 实战 - Warren blog</title>
 
   <link  rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/5.12.1/css/all.min.css" />
 <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
@@ -124,7 +124,7 @@
               
                 <p class="mt-3 post-meta">
                   <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-                  星期四, 四月 9日 2020, 3:07 下午
+                  星期六, 四月 11日 2020, 4:03 下午
                 </p>
               
 
@@ -133,7 +133,7 @@
                   
                   <span class="post-meta">
                     <i class="far fa-chart-bar"></i>
-                    1.2k 字
+                    508 字
                   </span>
                 
 
@@ -141,7 +141,7 @@
                   
                   <span class="post-meta">
                       <i class="far fa-clock"></i>
-                      4 分钟
+                      2 分钟
                   </span>
                 
 
@@ -169,121 +169,128 @@
           <div class="post-content mx-auto" id="post">
             
             <div class="markdown-body">
-              <h1 id="FlexBox-语法"><a href="#FlexBox-语法" class="headerlink" title="FlexBox 语法"></a>FlexBox 语法</h1><blockquote>
-<p>文章学习于阮一峰老师 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">flex 语法篇</a></p>
+              <h1 id="FlexBox-实战"><a href="#FlexBox-实战" class="headerlink" title="FlexBox 实战"></a>FlexBox 实战</h1><blockquote>
+<p>文章学习于阮一峰老师 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="noopener">布局教程</a></p>
 </blockquote>
-<h2 id="一、flex-布局是什么？"><a href="#一、flex-布局是什么？" class="headerlink" title="一、flex 布局是什么？"></a>一、flex 布局是什么？</h2><blockquote>
-<p>Flex 布局是 flexible box 的简称，弹性盒子布局，用来为盒状模型提供最大的灵活性</p>
-</blockquote>
-<p>任何一个容器都可以指定为 Flex 布局</p>
-<pre><code class="css">.box{
-  display: flex;
-}</code></pre>
-<p>行内元素也可以使用 Flex 布局</p>
-<pre><code class="css">.box{
-  display: inline-flex;
-}</code></pre>
-<p>Webkit 内核的浏览器 ,必须加上<code>-webkit</code>前缀</p>
-<pre><code class="css">.box{
-  display: -webkit-flex; /* Safari */
-  display: flex;
-}</code></pre>
-<p style='color="red"'>注意：</p>
+<h1>骰子布局练习</h1>
 
-<p>设为 Flex 布局以后，子元素的<code>float</code>、<code>clear</code>和<code>vertical-align</code>属性将失效</p>
-<h2 id="二、容器的属性"><a href="#二、容器的属性" class="headerlink" title="二、容器的属性"></a>二、容器的属性</h2><blockquote>
-<p>采用flex布局的元素，称之为”flex容器“，这里简称为容器；子元素即容器成员称之为”flex项目“，简称为项目。</p>
-</blockquote>
-<p><img src="/img/image-20200411095239471.png" srcset="/img/loading.gif" alt="image-20200411095239471"></p>
-<p><code>注意</code>：主轴的方向受flex-direction属性影响，不一定是水平方向从左到右（默认如此）</p>
-<p>有六个属性：</p>
-<pre><code class="markdown">flex-direction: 决定容器主轴方向，即项目的排列方向
-flex-wrap: 决定项目在主轴上排列不下如何换行
-flex-flow: flex-direction + flex-warp的简写形式
-justify-content: 项目的主轴上的对齐方式
-align-items: 项目的交叉轴上对齐方式
-align-content: 项目为多行时的交叉轴上填充方式</code></pre>
-<h3 id="2-1-flex-direction"><a href="#2-1-flex-direction" class="headerlink" title="2.1 flex-direction"></a>2.1 flex-direction</h3><ul>
-<li>row (默认值)：设置主轴为水平方向，项目从左到右排列</li>
-<li>row-reverse：设置主轴为水平方向，项目从右到左排列</li>
-<li>column：设置主轴为垂直方向，项目从上到下排列</li>
-<li>column-reverse：设置主轴为垂直方向，项目从下到上排列</li>
-</ul>
-<h3 id="2-2-flex-wrap"><a href="#2-2-flex-wrap" class="headerlink" title="2.2 flex-wrap"></a>2.2 flex-wrap</h3><ul>
-<li><p>nowrap（默认值）：不换行，放不下会按比例压缩</p>
-</li>
-<li><p>wrap：换行，换行后接在下方，如下</p>
-<blockquote>
-<p>1 2 3 4</p>
-<p>5 6 7</p>
-</blockquote>
-</li>
-<li><p>wrap-reverse：换行，换行后接在上方，如下</p>
-<blockquote>
-<p>5 6 7</p>
-<p>1 2 3 4</p>
-</blockquote>
-</li>
-</ul>
-<h3 id="2-3-flex-flow"><a href="#2-3-flex-flow" class="headerlink" title="2.3 flex-flow"></a>2.3 flex-flow</h3><p>flex-direction 和 flex-wrap 的结合体，用法如下：</p>
-<pre><code class="css">.box {
-    flex-flow: row nowrap; // 默认值为 row nowrap
+<p>先设置基础css、html</p>
+<pre><code class="html">&lt;div class=&quot;box&quot;&gt;
+    &lt;div class=&quot;dotBox&quot;&gt;
+        &lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<pre><code class="css">// 骰子面
+.box {
+    width: 300px;
+    height: 300px;
+    margin: 30px;
+    border: 2px black solid;
+    border-radius: 5px;
+}
+
+// 包圆点的盒子
+.dotBox {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+// 圆点
+.dot {
+    width: 45px;
+    height: 45px;
+    background-color: black;
+    border-radius: 50%;
 }</code></pre>
-<h3 id="2-4-justify-content"><a href="#2-4-justify-content" class="headerlink" title="2.4 justify-content"></a>2.4 justify-content</h3><p>它可能取5个值，具体对齐方式与轴的方向有关。下面假设主轴为从左到右</p>
-<ul>
-<li>flex-start（默认值）：左对齐</li>
-<li>flex-end：右对齐</li>
-<li>center：居中对齐</li>
-<li>space-between：两端对齐，项目之间的间隔相等</li>
-<li>space-around：项目两侧的间隔相等（易得项目之间的间隔是项目和边框的间隔的两倍）</li>
-</ul>
-<h3 id="2-5-align-items"><a href="#2-5-align-items" class="headerlink" title="2.5 align-items"></a>2.5 align-items</h3><p>它可能取5个值。具体的对齐方式与交叉轴的方向有关，下面假设交叉轴从上到下</p>
-<ul>
-<li>flex-start：上端对齐</li>
-<li>flex-end：下端对齐</li>
-<li>center：居中对齐</li>
-<li>baseline：项目第一行的文字基线对齐</li>
-<li>stretch（默认值）：拉伸（未设置高度的项目将拉伸铺满整个盒子高度），类似于等分了容器</li>
-</ul>
-<h3 id="2-6-align-content"><a href="#2-6-align-content" class="headerlink" title="2.6 align-content"></a>2.6 align-content</h3><p>当项目在容器里为多行的时候，该属性才起作用</p>
-<p>它可能取6个值。具体的分布与交叉轴的方向有关，下面假设交叉轴从上到下</p>
-<ul>
-<li>flex-start：上端对齐</li>
-<li>flex-end：下端对齐</li>
-<li>center：居中对齐</li>
-<li>space-between：两端对齐，项目之间的间隔相等</li>
-<li>space-around：项目两侧的间隔相等（易得项目之间的间隔是项目和边框的间隔的两倍）</li>
-<li>stretch（默认值）：拉伸，类似于每一行等分了容器</li>
-</ul>
-<h2 id="三、项目属性"><a href="#三、项目属性" class="headerlink" title="三、项目属性"></a>三、项目属性</h2><p>项目属性有六个，分别是</p>
-<ul>
-<li><p><code>order</code>：设置排序权重，默认为0，越小越靠前，相等权重按文档顺序</p>
-</li>
-<li><p><code>flex-grow</code>：拓展权重，默认值为0，如果在主轴上有剩余空间，则按照设置的权重比例追加宽度</p>
+<p>效果：</p>
+<p><img src="/img/image-20200411164648203.png" srcset="/img/loading.gif" alt="image-20200411164648203"></p>
+<h2 id="一、骰子面划分"><a href="#一、骰子面划分" class="headerlink" title="一、骰子面划分"></a>一、骰子面划分</h2><p><img src="/img/image-20200411170305912.png" srcset="/img/loading.gif" alt="image-20200411170305912"></p>
+<p>按九个点位的布局，下面将使用 flex box 布局将容器里的项目在九个点随意的放置。</p>
+<h2 id="二、单项目"><a href="#二、单项目" class="headerlink" title="二、单项目"></a>二、单项目</h2><h3 id="1-号点位"><a href="#1-号点位" class="headerlink" title="1 号点位"></a>1 号点位</h3><p><img src="/img/image-20200411164648203.png" srcset="/img/loading.gif" alt="image-20200411164648203"></p>
 <blockquote>
-<p>例如：容器宽度500，项目1宽度100，项目2宽度200，则剩余空间300，如项目1、2的权重比为1:2，则项目1宽度拓展为100+100=200，项目2宽度拓展为200+200=400）</p>
+<p>直接文档流单个项目就在1号点位了</p>
 </blockquote>
-</li>
-<li><p><code>flex-shrink</code>：缩小权重，默认值为1，当空间不足时会按权重比例缩小</p>
+<h3 id="2-号点位"><a href="#2-号点位" class="headerlink" title="2 号点位"></a>2 号点位</h3><p><img src="/img/image-20200411171106318.png" srcset="/img/loading.gif" alt="image-20200411171106318"></p>
 <blockquote>
-<p>例如：容器宽度600，项目1宽度500，项目2宽度1000，明显空间不足，如项目1、2的权重比为2:1，则：</p>
-<p>应当缩小的总空间为 (500+1000)-600=900</p>
-<p>加权和为：500*2+1000*1=2000</p>
-<p>项目应当缩小的宽度为：[应当缩小的总空间]*([缩小权重 flex-shrink]*[项目自身宽度]/[加权和])</p>
-<p>项目1的宽度缩小为：500-[900*(2*500/2000)]=500-450=50</p>
-<p>项目2的宽度缩小为：1000-[900*(1*1000/2000)]=1000-450=550</p>
+<p>设置 骰子面为 flex 容器，然后设置 justify-content 为 center 让 圆点居中</p>
 </blockquote>
-</li>
-<li><p><code>flex-basis</code>：项目基础空间，默认值auto，定义了项目占主轴的空间（拓展或缩小前的基础空间）</p>
-</li>
-<li><p><code>flex</code>：flex-grow、flex-shrink、flex-basis 三者的简写，默认值为 0 1 auto</p>
-</li>
-<li><p><code>align-self</code>：项目自己的对齐方式，默认值auto</p>
+<pre><code class="html">&lt;div class=&quot;box one-2&quot;&gt;
+    &lt;div class=&quot;dotBox&quot;&gt;
+        &lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<pre><code class="css">.one-2 {
+    display: flex;
+    justify-content: center;
+}</code></pre>
+<h3 id="3-号点位"><a href="#3-号点位" class="headerlink" title="3 号点位"></a>3 号点位</h3><p><img src="/img/image-20200411171458761.png" srcset="/img/loading.gif" alt="image-20200411171458761"></p>
 <blockquote>
-<p>设置为auto时和容器的align-items的设置一样（继承），除了auto，可设置的属性值和align-items一样，flex-start | flex-end | center | baseline | stretch，效果也是</p>
+<p>设置 骰子面为 flex 容器，然后设置 justify-content 为 flex-end 让 圆点居右</p>
 </blockquote>
-</li>
-</ul>
+<pre><code class="html">&lt;div class=&quot;box one-3&quot;&gt;
+    &lt;div class=&quot;dotBox&quot;&gt;
+        &lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<pre><code class="css">.one-3 {
+    display: flex;
+    justify-content: flex-end;
+}</code></pre>
+<h3 id="4-号点位"><a href="#4-号点位" class="headerlink" title="4 号点位"></a>4 号点位</h3><p><img src="/img/image-20200411172706046.png" srcset="/img/loading.gif" alt="image-20200411172706046"></p>
+<blockquote>
+<p>设置 align-items 为 center 让圆点交叉轴方向居中</p>
+</blockquote>
+<pre><code class="html">&lt;div class=&quot;box one-4&quot;&gt;
+    &lt;div class=&quot;dotBox&quot;&gt;
+        &lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<pre><code class="css">.one-4 {
+    display: flex;
+    align-items: center;
+}</code></pre>
+<h3 id="5-号点位"><a href="#5-号点位" class="headerlink" title="5 号点位"></a>5 号点位</h3><p><img src="/img/image-20200411173310889.png" srcset="/img/loading.gif" alt="image-20200411173310889"></p>
+<blockquote>
+<p>设置 justify-content 为 center 水平居中，设置 align-items 为 center 垂直居中</p>
+</blockquote>
+<pre><code class="html">&lt;div class=&quot;box one-5&quot;&gt;
+    &lt;div class=&quot;dotBox&quot;&gt;
+        &lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+<pre><code class="css">.one-5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}</code></pre>
+<h3 style='color: red'>下面几个单项的只放css了，就改一下类名 one-X </h3>
+
+<h3 id="6-号点位"><a href="#6-号点位" class="headerlink" title="6 号点位"></a>6 号点位</h3><p><img src="/img/image-20200411173845945.png" srcset="/img/loading.gif" alt="image-20200411173845945"></p>
+<pre><code class="css">.one-6 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}</code></pre>
+<h3 id="7-号点位"><a href="#7-号点位" class="headerlink" title="7 号点位"></a>7 号点位</h3><p><img src="/img/image-20200411174027592.png" srcset="/img/loading.gif" alt="image-20200411174027592"></p>
+<pre><code class="css">.one-7 {
+    display: flex;
+    align-items: flex-end;
+}</code></pre>
+<h3 id="8-号点位"><a href="#8-号点位" class="headerlink" title="8 号点位"></a>8 号点位</h3><p><img src="/img/image-20200411174425458.png" srcset="/img/loading.gif" alt="image-20200411174425458"></p>
+<pre><code class="css">.one-8 {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}</code></pre>
+<h3 id="9-号点位"><a href="#9-号点位" class="headerlink" title="9 号点位"></a>9 号点位</h3><p><img src="/img/image-20200411174455809.png" srcset="/img/loading.gif" alt="image-20200411174455809"></p>
+<pre><code class="css">.one-9 {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+}</code></pre>
 
             </div>
             <hr>
@@ -317,18 +324,12 @@ align-content: 项目为多行时的交叉轴上填充方式</code></pre>
                   <div class="post-prev col-6">
                     
                     
-                      <a href="/2020/04/11/%E3%80%90-CSS-%E3%80%91FlexBox-%E5%AE%9E%E6%88%98/">
-                        <i class="fa fa-chevron-left"></i>
-                        <span class="hidden-mobile">【 CSS 】FlexBox 实战</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </div>
                   <div class="post-next col-6">
                     
                     
-                      <a href="/2020/04/09/%E3%80%90-CSS-%E3%80%91%E5%93%81%E5%AD%97%E5%B8%83%E5%B1%80/">
-                        <span class="hidden-mobile">【 CSS 】品字布局</span>
+                      <a href="/2020/04/09/%E3%80%90-CSS-%E3%80%91FlexBox-%E8%AF%AD%E6%B3%95/">
+                        <span class="hidden-mobile">【 CSS 】FlexBox 语法</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="fa fa-chevron-right"></i>
                       </a>
@@ -540,7 +541,7 @@ align-content: 项目为多行时的交叉轴上填充方式</code></pre>
     var typed = new Typed('#subtitle', {
       strings: [
         '  ',
-        "【 CSS 】FlexBox 语法&nbsp;",
+        "【 CSS 】FlexBox 实战&nbsp;",
       ],
       cursorChar: "_",
       typeSpeed: 100,

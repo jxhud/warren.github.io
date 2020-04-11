@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>【 CSS 】FlexBox 实战</title>
+    <link href="/2020/04/11/%E3%80%90-CSS-%E3%80%91FlexBox-%E5%AE%9E%E6%88%98/"/>
+    <url>/2020/04/11/%E3%80%90-CSS-%E3%80%91FlexBox-%E5%AE%9E%E6%88%98/</url>
+    
+    <content type="html"><![CDATA[<h1 id="FlexBox-实战"><a href="#FlexBox-实战" class="headerlink" title="FlexBox 实战"></a>FlexBox 实战</h1><blockquote><p>文章学习于阮一峰老师 <a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="noopener">布局教程</a></p></blockquote><h1>骰子布局练习</h1><p>先设置基础css、html</p><pre><code class="html">&lt;div class=&quot;box&quot;&gt;    &lt;div class=&quot;dotBox&quot;&gt;        &lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;    &lt;/div&gt;&lt;/div&gt;</code></pre><pre><code class="css">// 骰子面.box {    width: 300px;    height: 300px;    margin: 30px;    border: 2px black solid;    border-radius: 5px;}// 包圆点的盒子.dotBox {    width: 100px;    height: 100px;    display: flex;    align-items: center;    justify-content: center;}// 圆点.dot {    width: 45px;    height: 45px;    background-color: black;    border-radius: 50%;}</code></pre><p>效果：</p><p><img src="/img/image-20200411164648203.png" srcset="/img/loading.gif" alt="image-20200411164648203"></p><h2 id="一、骰子面划分"><a href="#一、骰子面划分" class="headerlink" title="一、骰子面划分"></a>一、骰子面划分</h2><p><img src="/img/image-20200411170305912.png" srcset="/img/loading.gif" alt="image-20200411170305912"></p><p>按九个点位的布局，下面将使用 flex box 布局将容器里的项目在九个点随意的放置。</p><h2 id="二、单项目"><a href="#二、单项目" class="headerlink" title="二、单项目"></a>二、单项目</h2><h3 id="1-号点位"><a href="#1-号点位" class="headerlink" title="1 号点位"></a>1 号点位</h3><p><img src="/img/image-20200411164648203.png" srcset="/img/loading.gif" alt="image-20200411164648203"></p><blockquote><p>直接文档流单个项目就在1号点位了</p></blockquote><h3 id="2-号点位"><a href="#2-号点位" class="headerlink" title="2 号点位"></a>2 号点位</h3><p><img src="/img/image-20200411171106318.png" srcset="/img/loading.gif" alt="image-20200411171106318"></p><blockquote><p>设置 骰子面为 flex 容器，然后设置 justify-content 为 center 让 圆点居中</p></blockquote><pre><code class="html">&lt;div class=&quot;box one-2&quot;&gt;    &lt;div class=&quot;dotBox&quot;&gt;        &lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;    &lt;/div&gt;&lt;/div&gt;</code></pre><pre><code class="css">.one-2 {    display: flex;    justify-content: center;}</code></pre><h3 id="3-号点位"><a href="#3-号点位" class="headerlink" title="3 号点位"></a>3 号点位</h3><p><img src="/img/image-20200411171458761.png" srcset="/img/loading.gif" alt="image-20200411171458761"></p><blockquote><p>设置 骰子面为 flex 容器，然后设置 justify-content 为 flex-end 让 圆点居右</p></blockquote><pre><code class="html">&lt;div class=&quot;box one-3&quot;&gt;    &lt;div class=&quot;dotBox&quot;&gt;        &lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;    &lt;/div&gt;&lt;/div&gt;</code></pre><pre><code class="css">.one-3 {    display: flex;    justify-content: flex-end;}</code></pre><h3 id="4-号点位"><a href="#4-号点位" class="headerlink" title="4 号点位"></a>4 号点位</h3><p><img src="/img/image-20200411172706046.png" srcset="/img/loading.gif" alt="image-20200411172706046"></p><blockquote><p>设置 align-items 为 center 让圆点交叉轴方向居中</p></blockquote><pre><code class="html">&lt;div class=&quot;box one-4&quot;&gt;    &lt;div class=&quot;dotBox&quot;&gt;        &lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;    &lt;/div&gt;&lt;/div&gt;</code></pre><pre><code class="css">.one-4 {    display: flex;    align-items: center;}</code></pre><h3 id="5-号点位"><a href="#5-号点位" class="headerlink" title="5 号点位"></a>5 号点位</h3><p><img src="/img/image-20200411173310889.png" srcset="/img/loading.gif" alt="image-20200411173310889"></p><blockquote><p>设置 justify-content 为 center 水平居中，设置 align-items 为 center 垂直居中</p></blockquote><pre><code class="html">&lt;div class=&quot;box one-5&quot;&gt;    &lt;div class=&quot;dotBox&quot;&gt;        &lt;div class=&quot;dot&quot;&gt;&lt;/div&gt;    &lt;/div&gt;&lt;/div&gt;</code></pre><pre><code class="css">.one-5 {    display: flex;    justify-content: center;    align-items: center;}</code></pre><h3 style='color: red'>下面几个单项的只放css了，就改一下类名 one-X </h3><h3 id="6-号点位"><a href="#6-号点位" class="headerlink" title="6 号点位"></a>6 号点位</h3><p><img src="/img/image-20200411173845945.png" srcset="/img/loading.gif" alt="image-20200411173845945"></p><pre><code class="css">.one-6 {    display: flex;    justify-content: flex-end;    align-items: center;}</code></pre><h3 id="7-号点位"><a href="#7-号点位" class="headerlink" title="7 号点位"></a>7 号点位</h3><p><img src="/img/image-20200411174027592.png" srcset="/img/loading.gif" alt="image-20200411174027592"></p><pre><code class="css">.one-7 {    display: flex;    align-items: flex-end;}</code></pre><h3 id="8-号点位"><a href="#8-号点位" class="headerlink" title="8 号点位"></a>8 号点位</h3><p><img src="/img/image-20200411174425458.png" srcset="/img/loading.gif" alt="image-20200411174425458"></p><pre><code class="css">.one-8 {    display: flex;    justify-content: center;    align-items: flex-end;}</code></pre><h3 id="9-号点位"><a href="#9-号点位" class="headerlink" title="9 号点位"></a>9 号点位</h3><p><img src="/img/image-20200411174455809.png" srcset="/img/loading.gif" alt="image-20200411174455809"></p><pre><code class="css">.one-9 {    display: flex;    justify-content: flex-end;    align-items: flex-end;}</code></pre>]]></content>
+    
+    
+    <categories>
+      
+      <category>CSS</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>CSS</tag>
+      
+      <tag>FlexBox</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>【 CSS 】FlexBox 语法</title>
     <link href="/2020/04/09/%E3%80%90-CSS-%E3%80%91FlexBox-%E8%AF%AD%E6%B3%95/"/>
     <url>/2020/04/09/%E3%80%90-CSS-%E3%80%91FlexBox-%E8%AF%AD%E6%B3%95/</url>
