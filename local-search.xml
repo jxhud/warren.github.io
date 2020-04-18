@@ -4,6 +4,33 @@
   
   
   <entry>
+    <title>【 CSS 】什么是BFC</title>
+    <link href="/2020/04/18/%E3%80%90-CSS-%E3%80%91%E4%BB%80%E4%B9%88%E6%98%AFBFC/"/>
+    <url>/2020/04/18/%E3%80%90-CSS-%E3%80%91%E4%BB%80%E4%B9%88%E6%98%AFBFC/</url>
+    
+    <content type="html"><![CDATA[<h1 id="BFC-详情"><a href="#BFC-详情" class="headerlink" title="BFC 详情"></a>BFC 详情</h1><h2 id="一、什么是BFC"><a href="#一、什么是BFC" class="headerlink" title="一、什么是BFC"></a>一、什么是BFC</h2><blockquote><p>W3C对BFC的定义如下： 浮动元素和绝对定位元素，非块级盒子的块级容器（例如 inline-blocks, table-cells, 和 table-captions），以及overflow值不为”visiable”的块级盒子，都会为他们的内容创建新的BFC（Block Formatting Context， 即块级格式上下文），它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。</p></blockquote><ul><li>浮动元素 float</li><li>绝对定位元素 position: absolute 或 fixed;</li><li>非块级盒子的块级容器 inline-blocks, table-cells, 和 table-captions</li><li>overflow值 hidden scroll auto inherit ，不为visible</li></ul><h2 id="二、BFC-触发的方式"><a href="#二、BFC-触发的方式" class="headerlink" title="二、BFC 触发的方式"></a>二、BFC 触发的方式</h2><blockquote><p>一个HTML元素要创建BFC，则满足下列的任意一个或多个条件即可：</p></blockquote><ul><li>根元素，即HTML标签</li><li>浮动元素 float 非 none</li><li>绝对定位元素 position: absolute 或 fixed;</li><li>行内块级元素 display: inline-blocks</li><li>表格单元格 display: table-cells (HTML 表格单元格默认为该值)</li><li>表格标题 display: table-captions(HTML 表格标题默认为该值)</li><li>匿名表格单元格元素 元素的 display为 table、table-row、 table-row-group、table-header-group、table-footer-group（分别是HTML table、row、tbody、thead、tfoot的默认属性）或 inline-table</li><li>overflow 值不为 visible 的块元素</li><li>弹性元素 display为 flex 或 inline-flex元素的直接子元素</li><li>网格元素 display为 grid 或 inline-grid 元素的直接子元素 等等</li></ul><h2 id="三、BFC-的渲染规则"><a href="#三、BFC-的渲染规则" class="headerlink" title="三、BFC 的渲染规则"></a>三、BFC 的渲染规则</h2><ol><li>BFC 垂直方向边距重叠</li><li>BFC 的区域不会与浮动元素的 box 重叠</li><li>BFC 是一个独立的容器，外面的元素不会影响里面的元素</li><li>计算 BFC 高度时，浮动元素也会计算在内</li></ol><h2 id="四、BFC-的应用"><a href="#四、BFC-的应用" class="headerlink" title="四、BFC 的应用"></a>四、BFC 的应用</h2><h3 id="1、高度塌陷，清除浮动"><a href="#1、高度塌陷，清除浮动" class="headerlink" title="1、高度塌陷，清除浮动"></a>1、高度塌陷，清除浮动</h3><p>根据上述 BFC 渲染规则第四点很容易就能知道 BFC 可以用于解决浮动元素导致的高度塌陷问题</p><p>例如：</p><blockquote><p>html</p></blockquote><pre><code class="html">&lt;div id=&quot;context&quot;&gt;    &lt;div class=&quot;float&quot;&gt;&lt;/div&gt;&lt;/div&gt;</code></pre><blockquote><p>css</p></blockquote><pre><code class="css">#context {    width: 200px;    border: 2px red solid;}.float {    width: 100px;    height: 100px;    background-color: blue;    float: left;}</code></pre><p>就会造成高度塌陷，导致如下效果：</p><p><img src="/img/image-20200418104625238.png" srcset="/img/loading.gif" alt="image-20200418104625238"></p><p>将 context 触发BFC就能将浮动元素的高度也加入计算，从而撑起父盒子的高度，解决高度塌陷问题</p><p>如下，css 改为：</p><pre><code class="css">#context {    width: 200px;    border: 2px red solid;    overflow: hidden; // 添加一句}.float {    width: 100px;    height: 100px;    background-color: blue;    float: left;}</code></pre><h3 id="2、阻止垂直外边距折叠"><a href="#2、阻止垂直外边距折叠" class="headerlink" title="2、阻止垂直外边距折叠"></a>2、阻止垂直外边距折叠</h3><p>属于同一个BFC的两个相邻块级子元素（元素都要在文档流中）的上下margin会发生重叠—— 分为两个BFC就可以消除这种margin 重叠</p><p>例如：</p><blockquote><p>html</p></blockquote><pre><code class="html">&lt;div id=&quot;box&quot;&gt;    &lt;div class=&quot;item&quot;&gt;&lt;/div&gt;    &lt;div class=&quot;item&quot;&gt;&lt;/div&gt;&lt;/div&gt;</code></pre><blockquote><p>css</p></blockquote><pre><code class="css">#box {    width: 300px;    background-color: red;    overflow: hidden;}.item {    width: 100%;    height: 50px;    background-color: blue;    margin: 20px 0;}</code></pre><p>效果如下：</p><p><img src="/img/image-20200418105912502.png" srcset="/img/loading.gif" alt="image-20200418105912502"></p><p>在同一个BFC中的相邻两个块级元素垂直外边距折叠了，中间的红色空间隙本来应该是 20 + 20 的，结果只有 20，这个折叠是会选择边距大的吞并边距小的的，比如 40 + 20 的上下边距叠在一起就会变成 40。</p><p>那么如果要使这个垂直边距变回简单的加法，就需要将相邻的块级元素放在不同的 BFC 里面</p><p>例如：</p><blockquote><p>html</p></blockquote><pre><code class="html">&lt;div id=&quot;box&quot;&gt;    &lt;div class=&quot;item&quot;&gt;&lt;/div&gt;    &lt;div class=&quot;clr&quot;&gt;        &lt;div class=&quot;item&quot;&gt;&lt;/div&gt;    &lt;/div&gt;&lt;/div&gt;</code></pre><blockquote><p>css</p></blockquote><pre><code class="css">#box {    width: 300px;    background-color: red;    overflow: hidden;}.item {    width: 100%;    height: 50px;    background-color: blue;    margin: 20px 0;}.clr {    overflow: hidden; // 再套一个}</code></pre><p>效果：</p><p><img src="/img/image-20200418110623645.png" srcset="/img/loading.gif" alt="image-20200418110623645"></p><p>就阻止了这种边距的重叠效果。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>CSS</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>CSS</tag>
+      
+      <tag>BFC</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>【 CSS 】FlexBox 实战</title>
     <link href="/2020/04/11/%E3%80%90-CSS-%E3%80%91FlexBox-%E5%AE%9E%E6%88%98/"/>
     <url>/2020/04/11/%E3%80%90-CSS-%E3%80%91FlexBox-%E5%AE%9E%E6%88%98/</url>
